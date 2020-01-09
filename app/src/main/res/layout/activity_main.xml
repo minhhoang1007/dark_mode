@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/revHome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/ic_dark">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgAuto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/theme0"></ImageView>
+
+            <TextView
+                android:id="@+id/txtThem0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Auto"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgLight"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/theme1"></ImageView>
+
+            <TextView
+                android:id="@+id/txtThem1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Light"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgDark"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/cutsom_image"
+                android:padding="5dp"
+                android:src="@drawable/theme2"></ImageView>
+
+            <TextView
+                android:id="@+id/txtThem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Dark"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"></TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_alignBottom="@+id/lineButton"
+        android:layout_marginBottom="-80dp"
+        android:id="@+id/txtButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cutom_button_set_theem"
+        android:gravity="center"
+        android:text="Set Theme"
+        android:textColor="#ffff"></TextView>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/bannerKey">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

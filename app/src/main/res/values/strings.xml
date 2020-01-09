@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dark Mode</string>
+
+    <string name="app_ads_id">ca-app-pub-1325785591040931~9639267200</string>
+    <string name="bannerKey">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interKey">ca-app-pub-3940256099942544/1033173712</string>
+</resources>
