@@ -173,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
                 revHome.setBackgroundColor(getColor(R.color.white));
             }
         }
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
