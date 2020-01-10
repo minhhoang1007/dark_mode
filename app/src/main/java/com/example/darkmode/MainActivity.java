@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 imgLight.setBackground(null);
                 imgDark.setBackground(null);
                 setImgLogo();
+
                 break;
             }
             case MODE_NIGHT_NO: {
@@ -163,14 +164,16 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setImgLogo(int mode) {
         if (mode == MODE_NIGHT_YES) {
-            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_dark));
+            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_dark1));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 revHome.setBackgroundColor(getColor(R.color.black));
+
             }
         } else {
-            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_light));
+            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_light1));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 revHome.setBackgroundColor(getColor(R.color.white));
+
             }
         }
     }
@@ -179,14 +182,26 @@ public class MainActivity extends AppCompatActivity {
     private void setImgLogo() {
         int mode = DarkModeActivity.curentUiMode(this);
         if (mode == MODE_NIGHT_YES) {
-            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_dark));
+            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_dark1));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 revHome.setBackgroundColor(getColor(R.color.black));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    txtClick.setTextColor(getColor(R.color.white));
+                    txtThem0.setTextColor(getColor(R.color.white));
+                    txtThem1.setTextColor(getColor(R.color.white));
+                    txtThem2.setTextColor(getColor(R.color.white));
+                }
             }
         } else {
-            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_light));
+            imgLogo.setImageDrawable(getDrawable(R.drawable.ic_light1));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 revHome.setBackgroundColor(getColor(R.color.white));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    txtClick.setTextColor(getColor(R.color.black));
+                    txtThem0.setTextColor(getColor(R.color.black));
+                    txtThem1.setTextColor(getColor(R.color.black));
+                    txtThem2.setTextColor(getColor(R.color.black));
+                }
             }
         }
     }

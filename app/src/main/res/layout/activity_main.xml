@@ -3,7 +3,7 @@
     android:id="@+id/revHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color">
+    android:background="@color/black">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,28 +11,28 @@
 
         <ImageView
             android:id="@+id/imgLogo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:src="@drawable/ic_dark"></ImageView>
+            android:src="@drawable/ic_dark1"></ImageView>
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/lineButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
+        android:paddingTop="230dp"
+        android:paddingLeft="50dp"
+        android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
-
+            android:orientation="horizontal">
             <ImageView
                 android:id="@+id/imgAuto"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:padding="5dp"
                 android:src="@drawable/theme0"></ImageView>
@@ -42,8 +42,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Auto"
+                android:text="Auto Mode"
                 android:textColor="#FFFFFF"
+                android:paddingLeft="50dp"
                 android:textSize="20dp">
 
             </TextView>
@@ -53,12 +54,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imgLight"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:padding="5dp"
                 android:src="@drawable/theme1"></ImageView>
@@ -68,7 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Light"
+                android:text="Light Mode"
+                android:paddingLeft="50dp"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp">
@@ -80,12 +83,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
-
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
             <ImageView
                 android:id="@+id/imgDark"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:background="@drawable/cutsom_image"
                 android:padding="5dp"
@@ -96,8 +99,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Dark"
+                android:text="Dark Mode"
                 android:textAlignment="center"
+                android:paddingLeft="50dp"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"></TextView>
         </LinearLayout>
@@ -113,7 +117,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/cutom_button_set_theem"
         android:gravity="center"
-        android:text="Set Theme"
+        android:text="SET THEME"
+        android:textSize="24sp"
         android:textColor="#ffff"></TextView>
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
