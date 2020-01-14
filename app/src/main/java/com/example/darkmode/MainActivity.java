@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.e( "onCreate: ","OKOK" );
-       rateAuto();
+        rateAuto();
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -251,7 +251,8 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             imgLogo.setImageDrawable(getDrawable(R.drawable.ic_light1));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 revHome.setBackgroundColor(getColor(R.color.white));
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     txtClick.setTextColor(getColor(R.color.black));
                     txtThem0.setTextColor(getColor(R.color.colorblue));
                     txtThem1.setTextColor(getColor(R.color.black));
@@ -259,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
                 }
             }
         }
-    }
+
     void moveToNewApp(String appId){
         Intent intent = new Intent(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://play.google.com/store/apps/details?id=" + appId)));
