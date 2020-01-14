@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':ratedialog', ':mylibrary'
 rootProject.name='Dark Mode'

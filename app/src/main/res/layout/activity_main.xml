@@ -1,134 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/revHome"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black">
-
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+        android:weightSum="5"
+        android:id="@+id/revHome"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/imgLogo"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:src="@drawable/ic_dark1"></ImageView>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/lineButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="230dp"
-        android:paddingLeft="50dp"
-        android:orientation="vertical">
-
+        android:layout_height="match_parent"
+        android:background="@color/black">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/imgAuto"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:src="@drawable/theme0"></ImageView>
-
-            <TextView
-                android:id="@+id/txtThem0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Auto Mode"
-                android:textColor="#FFFFFF"
-                android:paddingLeft="50dp"
-                android:textSize="20dp">
-
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imgLight"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:src="@drawable/theme1"></ImageView>
-
-            <TextView
-                android:id="@+id/txtThem1"
+                android:id="@+id/imgLogo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Light Mode"
-                android:paddingLeft="50dp"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp">
-
-            </TextView>
+                android:src="@drawable/ic_dark1"></ImageView>
         </LinearLayout>
-
         <LinearLayout
+            android:layout_weight="3"
+            android:id="@+id/lineButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/imgDark"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
                 android:layout_gravity="center"
-                android:background="@drawable/cutsom_image"
-                android:padding="5dp"
-                android:src="@drawable/theme2"></ImageView>
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/linner0"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgAuto"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/theme0"></ImageView>
+
+                <TextView
+                    android:id="@+id/txtThem0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Auto Mode"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="50dp"
+                    android:textSize="20dp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/linner1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgLight"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/theme1"></ImageView>
+
+                <TextView
+                    android:id="@+id/txtThem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Light Mode"
+                    android:paddingLeft="50dp"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/linner2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgDark"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:background="@drawable/cutsom_image"
+                    android:src="@drawable/theme2"></ImageView>
+
+                <TextView
+                    android:id="@+id/txtThem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="50dp"
+                    android:text="Dark Mode"
+                    android:textAlignment="center"
+                    android:textColor="#0000FF"
+                    android:textSize="20dp"></TextView>
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/txtThem2"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtButton"
+                android:layout_width="183dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Dark Mode"
-                android:textAlignment="center"
-                android:paddingLeft="50dp"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"></TextView>
+                android:layout_marginTop="10dp"
+                android:background="@drawable/cutom_button_set_theem"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="SET THEME"
+                android:textColor="#ffff"
+                android:textSize="20sp"></TextView>
         </LinearLayout>
 
+
+        <com.google.android.gms.ads.AdView
+            android:layout_weight="1"
+            android:layout_gravity="bottom|center"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="LARGE_BANNER"
+            ads:adUnitId="@string/bannerKey">
+        </com.google.android.gms.ads.AdView>
+
     </LinearLayout>
-
-    <TextView
-        android:layout_centerInParent="true"
-        android:layout_alignBottom="@+id/lineButton"
-        android:layout_marginBottom="-80dp"
-        android:id="@+id/txtButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/cutom_button_set_theem"
-        android:gravity="center"
-        android:text="SET THEME"
-        android:textSize="24sp"
-        android:textColor="#ffff"></TextView>
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="LARGE_BANNER"
-        ads:adUnitId="@string/bannerKey">
-    </com.google.android.gms.ads.AdView>
-
+    <RelativeLayout
+        android:id="@+id/revLoading"
+        android:visibility="gone"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="30sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading ads"/>
+    </RelativeLayout>
 </RelativeLayout>
