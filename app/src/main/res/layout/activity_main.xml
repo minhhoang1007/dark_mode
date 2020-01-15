@@ -2,7 +2,7 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        android:weightSum="5"
+        android:weightSum="10"
         android:id="@+id/revHome"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -10,9 +10,10 @@
         android:background="@color/black">
 
         <LinearLayout
+            android:layout_weight="7"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/imgLogo"
                 android:layout_width="match_parent"
@@ -20,10 +21,10 @@
                 android:src="@drawable/ic_dark1"></ImageView>
         </LinearLayout>
         <LinearLayout
-            android:layout_weight="3"
             android:id="@+id/lineButton"
+            android:layout_weight="3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
@@ -38,7 +39,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imgAuto"
+                    android:background="@drawable/custom_image_null"                    android:id="@+id/imgAuto"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:padding="5dp"
@@ -72,7 +73,7 @@
                     android:id="@+id/imgLight"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:padding="5dp"
+                    android:background="@drawable/custom_image_null"                        android:padding="5dp"
                     android:layout_gravity="center"
                     android:src="@drawable/theme1"></ImageView>
 
@@ -123,10 +124,12 @@
 
             <TextView
                 android:id="@+id/txtButton"
-                android:layout_width="183dp"
+                android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:background="@drawable/cutom_button_set_theem"
                 android:gravity="center"
                 android:padding="5dp"
@@ -137,12 +140,12 @@
 
 
         <com.google.android.gms.ads.AdView
-            android:layout_weight="1"
             android:layout_gravity="bottom|center"
             xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             ads:adSize="LARGE_BANNER"
             ads:adUnitId="@string/bannerKey">
@@ -155,11 +158,20 @@
         android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:textSize="30sp"
-            android:layout_centerInParent="true"
+        <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Loading ads"/>
+            android:layout_centerInParent="true"
+            ></ProgressBar>
+        <TextView
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Loading ... \n Loading is contain ads"/>
     </RelativeLayout>
 </RelativeLayout>

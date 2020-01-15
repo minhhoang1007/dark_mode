@@ -28,7 +28,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
-public class MainActivity extends AppCompatActivity implements RatingDialog.RatingDialogInterFace{
+public class MainActivity extends AppCompatActivity implements RatingDialog.RatingDialogInterFace {
     public static final int MODE_NIGHT_AUTO = 0;
     public static final int MODE_NIGHT_NO = 1;
     public static final int MODE_NIGHT_YES = 2;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
     LinearLayout linner0, linner1, linner2;
     RelativeLayout revLoading;
     LinearLayout revHome;
-    int modeSelected;
+    Integer modeSelected;
     AdView mAdView;
     InterstitialAd mInterstitialAd;
     private String magnet;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e( "onCreate: ","OKOK" );
+        Log.e("onCreate: ", "OKOK");
         rateAuto();
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -85,9 +85,14 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view) {
-                revLoading.setVisibility(View.VISIBLE);
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-               DarkModeActivity.changeUIMode(view.getContext(), modeSelected);
+                if(modeSelected != null) {
+                    revLoading.setVisibility(View.VISIBLE);
+                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Please select mode", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -124,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
 
             @Override
             public void onAdClosed() {
+                DarkModeActivity.changeUIMode(getApplicationContext(), modeSelected);
                 switch (modeSelected) {
                     case MODE_NIGHT_AUTO: {
                         Toast.makeText(MainActivity.this, "Set Auto Mode", Toast.LENGTH_SHORT).show();
@@ -141,12 +147,6 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             }
         });
 
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
 
     }
 
@@ -181,15 +181,15 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
         switch (mode) {
             case MODE_NIGHT_AUTO: {
                 imgAuto.setBackground(getDrawable(R.drawable.cutsom_image));
-                imgLight.setBackground(null);
-                imgDark.setBackground(null);
+                imgLight.setBackground(getDrawable(R.drawable.custom_image_null));
+                imgDark.setBackground(getDrawable(R.drawable.custom_image_null));
                 setImgLogo();
                 break;
             }
             case MODE_NIGHT_NO: {
                 imgLight.setBackground(getDrawable(R.drawable.cutsom_image));
-                imgAuto.setBackground(null);
-                imgDark.setBackground(null);
+                imgAuto.setBackground(getDrawable(R.drawable.custom_image_null));
+                imgDark.setBackground(getDrawable(R.drawable.custom_image_null));
                 setImgLogo(mode);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     txtClick.setTextColor(getColor(R.color.black));
@@ -201,9 +201,8 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             }
             case MODE_NIGHT_YES: {
                 imgDark.setBackground(getDrawable(R.drawable.cutsom_image));
-
-                imgAuto.setBackground(null);
-                imgLight.setBackground(null);
+                imgAuto.setBackground(getDrawable(R.drawable.custom_image_null));
+                imgLight.setBackground(getDrawable(R.drawable.custom_image_null));
                 setImgLogo(mode);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     txtClick.setTextColor(getColor(R.color.white));
@@ -253,21 +252,22 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
                 revHome.setBackgroundColor(getColor(R.color.white));
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    txtClick.setTextColor(getColor(R.color.black));
-                    txtThem0.setTextColor(getColor(R.color.colorblue));
-                    txtThem1.setTextColor(getColor(R.color.black));
-                    txtThem2.setTextColor(getColor(R.color.black));
-                }
+                txtClick.setTextColor(getColor(R.color.black));
+                txtThem0.setTextColor(getColor(R.color.colorblue));
+                txtThem1.setTextColor(getColor(R.color.black));
+                txtThem2.setTextColor(getColor(R.color.black));
             }
         }
+    }
 
-    void moveToNewApp(String appId){
+    void moveToNewApp(String appId) {
         Intent intent = new Intent(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://play.google.com/store/apps/details?id=" + appId)));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
     void open(String magnet) {
         this.magnet = magnet;
         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
@@ -278,10 +278,12 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             Log.d("dddddd", "abcd");
         }
     }
-    void goToMarket(){
+
+    void goToMarket() {
         Intent goToMarket = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("market://search?q=torrent clients"));
         startActivity(goToMarket);
     }
+
     public static void rateApp(Context context) {
         Intent intent = new Intent(new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
@@ -289,6 +291,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
+
     public void rateAuto() {
         int rate = SharedPrefsUtils.getInstance(this).getInt("rate");
         if (rate < 1) {
@@ -297,14 +300,17 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             ratingDialog.showDialog();
         }
     }
+
     void rateManual() {
         RatingDialog ratingDialog = new RatingDialog(this);
         ratingDialog.setRatingDialogListener(this);
         ratingDialog.showDialog();
     }
+
     @Override
     public void onDismiss() {
     }
+
     @Override
     public void onSubmit(float rating) {
         if (rating > 3) {
@@ -312,6 +318,7 @@ public class MainActivity extends AppCompatActivity implements RatingDialog.Rati
             SharedPrefsUtils.getInstance(this).putInt("rate", 5);
         }
     }
+
     @Override
     public void onRatingChanged(float rating) {
     }
