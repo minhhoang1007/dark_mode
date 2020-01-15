@@ -132,7 +132,7 @@
                 android:paddingBottom="10dp"
                 android:background="@drawable/cutom_button_set_theem"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="8dp"
                 android:text="SET THEME"
                 android:textColor="#ffff"
                 android:textSize="20sp"></TextView>
@@ -158,20 +158,20 @@
         android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ProgressBar
-            android:layout_width="wrap_content"
+<ProgressBar
+           android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             ></ProgressBar>
         <TextView
             android:textSize="20sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_200sdp"
             android:layout_centerInParent="true"
-            android:textAlignment="center"
+         android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:text="Loading ... \n Loading is contain ads"/>
-    </RelativeLayout>
+            android:text="Loading ..."/>
+ </RelativeLayout>
 </RelativeLayout>
